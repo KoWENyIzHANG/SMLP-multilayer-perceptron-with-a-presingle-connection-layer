@@ -53,6 +53,7 @@ def prepare_data(train_path,test_path):
 def train_model(train_dl, model):
     criterion = torch.nn.CrossEntropyLoss().to(device)
     optimizer = Adam(model.parameters(),lr=0.005)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 10000, gamma=0.1) # lr decay
     # enumerate epochs
     for epoch in range(n_epoch):
         model.train()
@@ -84,6 +85,7 @@ def train_model(train_dl, model):
                     actuals.append(x)
                 for y in list(yhat):
                     predictions.append(y)
+        scheduler.step()
         if epoch % 100 == 0:
             # eval
             model.eval()
