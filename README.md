@@ -4,4 +4,6 @@ Zhang, W., Shen, X., Zhang, H. et al. Feature importance measure of a multilayer
 
 ![image](SMLP.jpg)
 
-Linear simulations in the paper can be found in the folder "Linear simulation example".
+Linear classification simulations in the paper can be found in the folder "Linear classification simulation example".
+
+Linear regression simulations in the paper can be found in the folder "Linear regression simulation example".
